@@ -1,0 +1,119 @@
+tenant: "public"
+namespace: "default"
+name: "textprocess"
+className: "dev.pulsarfunction.pulsardjlexample.TextFunction"
+inputs: ["chat"]
+userConfig:
+  "PublishTopic": "chatresult"
+output: "chatresult"
+autoAck: true
+parallelism: 1
+apiVersion: 1
+
+    --auto-ack
+      Whether or not the framework acknowledges messages automatically
+    --batch-builder
+      BatcherBuilder provides two types of batch construction methods, DEFAULT 
+      and KEY_BASED. The default value is: DEFAULT
+    --classname
+      The class name of a Pulsar Function
+    --cpu
+      The cpu in cores that need to be allocated per function 
+      instance(applicable only to docker runtime)
+    --custom-runtime-options
+      A string that encodes options to customize the runtime, see docs for 
+      configured runtime for details
+    --custom-schema-inputs
+      The map of input topics to Schema properties (as a JSON string)
+    --custom-schema-outputs
+      The map of input topics to Schema properties (as a JSON string)
+    --custom-serde-inputs
+      The map of input topics to SerDe class names (as a JSON string)
+    --dead-letter-topic
+      The topic where messages that are not processed successfully are sent to
+    --disk
+      The disk in bytes that need to be allocated per function 
+      instance(applicable only to docker runtime)
+    --forward-source-message-property
+      Forwarding input message's properties to output topic when processing
+      Default: true
+    --fqfn
+      The Fully Qualified Function Name (FQFN) for the function
+    --function-config-file
+      The path to a YAML config file that specifies the configuration of a 
+      Pulsar Function
+    --go
+      Path to the main Go executable binary for the function (if the function 
+      is written in Go)
+    --input-specs
+      The map of inputs to custom configuration (as a JSON string)
+    -i, --inputs
+      The input topic or topics (multiple topics can be specified as a 
+      comma-separated list) of a Pulsar Function
+    --jar
+      Path to the JAR file for the function (if the function is written in 
+      Java). It also supports URL path [http/https/file (file protocol assumes 
+      that file already exists on worker host)] from which worker can download 
+      the package.
+    --log-topic
+      The topic to which the logs of a Pulsar Function are produced
+    --max-message-retries
+      How many times should we try to process a message before giving up
+    --name
+      The name of a Pulsar Function
+    --namespace
+      The namespace of a Pulsar Function
+    -o, --output
+      The output topic of a Pulsar Function (If none is specified, no output 
+      is written)
+    --output-serde-classname
+      The SerDe class to be used for messages output by the function
+    --parallelism
+      The parallelism factor of a Pulsar Function (i.e. the number of function 
+      instances to run)
+    --processing-guarantees
+      The processing guarantees (aka delivery semantics) applied to the 
+      function 
+      Possible Values: [ATLEAST_ONCE, ATMOST_ONCE, EFFECTIVELY_ONCE]
+    --producer-config
+      The custom producer configuration (as a JSON string)
+    --py
+      Path to the main Python file/Python Wheel file for the function (if the 
+      function is written in Python)
+    --ram
+      The ram in bytes that need to be allocated per function 
+      instance(applicable only to process/docker runtime)
+    --retain-key-ordering
+      Function consumes and processes messages in key order
+    --retain-ordering
+      Function consumes and processes messages in order
+    -st, --schema-type
+      The builtin schema type or custom schema class name to be used for 
+      messages output by the function
+      Default: <empty string>
+    --sliding-interval-count
+      The number of messages after which the window slides
+    --sliding-interval-duration-ms
+      The time duration after which the window slides
+    --subs-name
+      Pulsar source subscription name if user wants a specific 
+      subscription-name for input-topic consumer
+    --subs-position
+      Pulsar source subscription position if user wants to consume messages 
+      from the specified location
+      Possible Values: [Latest, Earliest]
+    --tenant
+      The tenant of a Pulsar Function
+    --timeout-ms
+      The message timeout in milliseconds
+    --topics-pattern
+      The topic pattern to consume from list of topics under a namespace that 
+      match the pattern. [--input] and [--topic-pattern] are mutually 
+      exclusive. Add SerDe class name for a pattern in --custom-serde-inputs 
+      (supported for java fun only)
+    --user-config
+      User-defined config key/values
+    --window-length-count
+      The number of messages per window
+    --window-length-duration-ms
+      The time duration of the window in milliseconds
