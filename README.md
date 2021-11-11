@@ -5,7 +5,7 @@ Chat meetup
 ## create function
 
 ```
-bin/pulsar-admin functions create --auto-ack true --jar pulsardjlexample-1.0.jar --classname "dev.pulsarfunction.pulsardjlexample.TextFunction" --dead-letter-topic chatdead --inputs "persistent://public/default/chat"   --log-topic "persistent://public/default/chatlog" --name TextProcess --namespace public --output "persistent://public/default/chatresult" --tenant default
+bin/pulsar-admin functions create --auto-ack true --jar pulsardjlexample-1.0.jar --classname "dev.pulsarfunction.pulsardjlexample.TextFunction" --dead-letter-topic chatdead --inputs "persistent://public/default/chat"   --log-topic "persistent://public/default/chatlog" --name TextProcess --namespace default --output "persistent://public/default/chatresult" --tenant public  --max-message-retries 5
 ```
 
 ## mockup ui
