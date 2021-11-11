@@ -8,6 +8,10 @@ Chat meetup
 bin/pulsar-admin functions create --auto-ack true --jar pulsardjlexample-1.0.jar --classname "dev.pulsarfunction.pulsardjlexample.TextFunction" --dead-letter-topic chatdead --inputs "persistent://public/default/chat"   --log-topic "persistent://public/default/chatlog" --name TextProcess --namespace public --output "persistent://public/default/chatresult" --tenant default
 ```
 
+## mockup ui
+
+![mockup](https://github.com/tspannhw/FLiP-Meetup-Chat/raw/main/chatmockup.png)
+
 ## reference
 
 * https://pulsar.apache.org/docs/en/functions-deploy/
