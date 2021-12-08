@@ -30,3 +30,11 @@ bin/pulsar-admin functions delete --name Chat --namespace default --tenant publi
 bin/pulsar-admin functions create --auto-ack true --py pulsar-pychat-function/src/sentiment.py --classname "sentiment.Chat" --inputs "persistent://public/default/chat" --log-topic "persistent://public/default/chatlog" --name Chat --namespace default --output "persistent://public/default/chatresult" --tenant public
 
 ````
+
+ bin/pulsar-admin topics create persistent://public/default/chat
+    bin/pulsar-admin topics create persistent://public/default/chatresult
+    bin/pulsar-admin topics create persistent://public/default/chatlog
+    bin/pulsar-admin topics create persistent://public/default/chatdead
+    bin/pulsar-client consume "persistent://public/default/chat" -s "fnchatreader" -n 0
+    bin/pulsar-client consume "persistent://public/default/chatresult" -s "fnchatresultreader" -n 0
+  
