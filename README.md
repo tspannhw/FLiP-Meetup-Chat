@@ -18,3 +18,15 @@ bin/pulsar-admin functions create --auto-ack true --jar pulsardjlexample-1.0.jar
 * https://pulsar.apache.org/docs/en/functions-overview/
 * https://github.com/apache/pulsar/blob/master/pulsar-functions/java-examples/src/main/resources/example-function-config.yaml
 * https://github.com/streamnative/streamnative-academy/blob/master/microservices-webinars/deploy.sh
+
+## deploy function
+
+````
+
+clear
+
+bin/pulsar-admin functions delete --name Chat --namespace default --tenant public
+
+bin/pulsar-admin functions create --auto-ack true --py pulsar-pychat-function/src/sentiment.py --classname "sentiment.Chat" --inputs "persistent://public/default/chat" --log-topic "persistent://public/default/chatlog" --name Chat --namespace default --output "persistent://public/default/chatresult" --tenant public
+
+````
